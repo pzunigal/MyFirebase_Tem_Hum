@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">MyFirebase_Tem_Hum</string>
+    <string name="titulo_Profesional">Sensor Humedad y Temperatura</string>
+    <string name="subtitulo_principal">Calidad de Aire Labranza</string>
+    <string name="all">TODO</string>
+    <string name="titulo_temperatura">Temperatura</string>
+    <string name="titulo_humedad">Humedad</string>
+    <string name="temperatura">28 C°</string>
+    <string name="humedad">75 %</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
