@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -14,8 +14,7 @@
         android:orientation="vertical"
         app:layout_constrainEnd_toEndOf="parent"
         app:layout_constrainStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        >
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/titleTextView"
@@ -31,9 +30,8 @@
             android:fontFamily="sans-serif"
             android:text="@string/titulo_Profesional"
             android:textColor="@color/black"
-            android:textStyle="bold"
             android:textSize="24sp"
-            />
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -43,8 +41,8 @@
             android:layout_alignParentEnd="true"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="19dp"
-            app:loyout_constrainTop_toTopOf="parent"
-            android:src="@mipmap/logosantotomas" />
+            android:src="@mipmap/logosantotomas"
+            app:loyout_constrainTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/sub_titleTextView"
@@ -68,7 +66,7 @@
         android:id="@+id/humidityProgressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
-        android:layout_height="8dp"
+        android:layout_height="0dp"
         android:background="@drawable/ic_circular"
         android:indeterminate="false"
         android:max="100"
@@ -76,6 +74,7 @@
         app:layout_constrainBottom_toTopOf="@+id/linearLayout2"
         app:layout_constrainEnd_toEndOf="parent"
         app:layout_constrainHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constrainTop_toBottomOf="@+id/linearLayout"
         />
 
@@ -87,35 +86,44 @@
         app:layout_constrainBottom_toBottomOf="@+id/humidityProgressBar"
         app:layout_constrainEnd_toEndOf="parent"
         app:layout_constrainStart_toStartOf="parent"
-        app:layout_constrainTop_toBottomOf="@+id/lienarLayout"
-        tools:ignore="UseCompoundDrawables"
-        >
-
+        app:layout_constrainTop_toBottomOf="@+id/linearLayout"
+        tools:ignore="UseCompoundDrawables">
         <ImageView
-            android:id="@+id/ImageView"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:contentDescription="TODO"
             android:srcCompat="@drawable/ic_humidity"
-            tools:ignore="VectorDrawableCompat"
-            />
+            tools:ignore="VectorDrawableCompat" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:orientation="vertical"
+        app:layout_constrainBottom_toBottomOf="parent"
+        app:layout_constrainEnd_toEndOf="parent"
+        app:layout_constrainStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/humidityTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="@string/humedad"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/titleHumidityTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="@string/titulo_humedad"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="24sp"/>
     </LinearLayout>
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

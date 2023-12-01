@@ -1,14 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".main.TemperatureFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity"
+    android:background="@color/white">
+    <RelativeLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constrainEnd_toEndOf="parent"
+        app:layout_constrainStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_toStartOf="@+id/imageView"
+            android:layout_toLeftOf="@+id/imageView"
+            android:fontFamily="sans-serif"
+            android:text="@string/titulo_Profesional"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/sub_titleTextView"
+            android:layout_width="223dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleTextView"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/subtitulo_principal"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="138dp"
+            android:layout_height="118dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="19dp"
+            android:src="@mipmap/logosantotomas"
+            app:loyout_constrainTop_toTopOf="parent" />
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/humidityProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/ic_circular"
+        android:indeterminate="false"
+        android:max="100"
+        android:progressDrawable="@drawable/ic_circular_progress_bar"
+        app:layout_constrainBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constrainEnd_toEndOf="parent"
+        app:layout_constrainHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constrainTop_toBottomOf="@+id/linearLayout"
+        />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constrainBottom_toBottomOf="@+id/humidityProgressBar"
+        app:layout_constrainEnd_toEndOf="parent"
+        app:layout_constrainStart_toStartOf="parent"
+        app:layout_constrainTop_toBottomOf="@+id/linearLayout"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:id="@+id/io"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:contentDescription="TODO"
+            android:srcCompat="@drawable/ic_humidity"
+            tools:ignore="VectorDrawableCompat" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:orientation="vertical"
+        app:layout_constrainBottom_toBottomOf="parent"
+        app:layout_constrainEnd_toEndOf="parent"
+        app:layout_constrainStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/humidityTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="@string/humedad"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/titleHumidityTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/titulo_humedad"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="24sp"/>
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
